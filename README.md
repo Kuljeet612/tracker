@@ -1,2 +1,2 @@
 # tracker
-React | Redux | TypeScript | ES6 | Styled Components
+React | Redux | TypeScript | ES6 | Styled Components | JSON-Server
