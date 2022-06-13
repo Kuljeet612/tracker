@@ -1,26 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import { AppContainer } from "./styles";
+import { H3 } from "./components/CountHeader/H3";
+import { LOADING_MSG, ERROR_MSG } from "./constants";
+import { AbsencesList } from "./features/Absences";
 
-function App() {
+export const App = () => { 
+  const [absences, setAbsences] = useState([]);
+  const [members, setMembers] = useState([]);
+  const [status, setStatus] = useState('');
+
+  const fetchAbsences = async() => {
+    setStatus("loading")
+    const response = await fetch('http://localhost:3300/absences');
+      if (response.ok) {
+      setStatus("success")
+      const result = await response.json(); 
+      setAbsences(result.absences.payload);
+    } else {
+      setStatus("failed")
+      const error: any = new Error(
+        `Error ${response.status}: ${response.statusText}`
+      );
+      error.response = response;
+      throw error;
+    }
+  }
+
+  const fetchMembers = async() => {
+    const response = await fetch('http://localhost:3300/members');
+    if (response.ok) {
+      const result = await response.json();      
+      setMembers(result.members.payload);
+    } else {
+      const error: any = new Error(
+        `Error ${response.status}: ${response.statusText}`
+      );
+      error.response = response;
+      throw error;
+    }
+  }
+
+  useEffect(() => { 
+    fetchMembers();
+    fetchAbsences();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContainer>
+      {status === "loading" && <H3 label={LOADING_MSG} value="" />}
+      {status === "success" && <AbsencesList absences={absences} members={members}/>}
+      {status === "failed" && <H3 label={ERROR_MSG} value="" />}
+    </AppContainer>
   );
-}
-
-export default App;
+};
