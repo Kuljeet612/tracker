@@ -19,7 +19,7 @@ const initialState = {
 export const fetchMembers: any = createAsyncThunk(
     'members/fetchMembers',
     async () => {    
-      const response = await fetch('http://localhost:9000/members');
+      const response = await fetch('http://localhost:3300/members');
       if (response.ok) {
         const result = await response.json();      
         return result.members.payload;
