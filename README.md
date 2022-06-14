@@ -1,6 +1,8 @@
 # Vacation Tracker
 
-A simple vacation tracker that allows to track absences of employees based on type (vacation or sickness) and from date. This app uses latest versions of React and Redux. TypeScript, ES6, Styled Components and JSON-Server are used to make it more robust and neat looking. 
+A simple vacation tracker that allows to track absences of employees based on type (vacation or sickness) and "from" date. This app uses latest versions of React and Redux. 
+
+TypeScript, ES6, Styled Components and JSON-Server are used to make it more robust and neat looking. 
 
 ![image](https://user-images.githubusercontent.com/16205759/173640052-e018d890-522c-419f-aac5-ed670ede139d.png)
 
