@@ -38,7 +38,7 @@ TypeScript, ES6, Styled Components and JSON-Server are used to make it more robu
 ### [Deployment at GitHub Pages](https://kuljeet612.github.io/tracker/)
   
 ### Credits
-[Redux Toolkit Latest Documentation](https://redux-toolkit.js.org/api/createslice).
+[Redux Toolkit Latest Documentation](https://redux-toolkit.js.org/api/createslice)
 
 [Guidelines on Redux usage with TyeScript](https://redux.js.org/usage/usage-with-typescript)
 
