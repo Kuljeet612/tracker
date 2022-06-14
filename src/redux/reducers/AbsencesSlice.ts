@@ -39,9 +39,9 @@ const initialState = {
 export const fetchAbsences: any = createAsyncThunk(
     'absences/fetchAbsences',
     async () => {    
-      const response = await fetch('http://localhost:3300/absences');
+      const response = await fetch(`${process.env.REACT_APP_BASE_URL}/absences`);
       if (response.ok) {
-        const result = await response.json();      
+        const result = await response.json();              
         return result.absences.payload;
       } else {
         const error: any = new Error(
