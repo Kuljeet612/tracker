@@ -32,12 +32,16 @@ A simple vacation tracker that allows to track absences of employees based on ty
   ```
   yarn build
   ```
-
+  
+### [Deployment at GitHub Pages](https://kuljeet612.github.io/tracker/)
+  
 ### Credits
 [Redux Toolkit Latest Documentation](https://redux-toolkit.js.org/api/createslice).
 
 [Guidelines on Redux usage with TyeScript](https://redux.js.org/usage/usage-with-typescript)
 
 [Testing Redux Toolkit Example](https://ogzhanolguncu.com/blog/testing-react-redux-toolkit-with-typescript)
+
+[Deploying a React App* to GitHub Pages](https://github.com/gitname/react-gh-pages)
 
 
